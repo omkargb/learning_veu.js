@@ -1,0 +1,33 @@
+<html>
+<head> 
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intro </title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+ </head>
+ 
+<body class="container" style="background-color:ghostwhite; font-family : noto sans;"><br>
+ <div class="panel panel-info panel-body" id="app">
+ 
+<h3> Veu.js - hello Veu program </h3>
+		<hr>
+<p>" {{  message  }} "</p>
+</div>
+
+
+ </body>
+
+
+<script src="vue.js"></script>
+
+<script>
+ var data = {
+ message: ' Welcome user..  Hello Veu.. '
+ };
+ new Vue({
+ el: '#app',
+ data: data
+ })
+</script>
+
+</html>

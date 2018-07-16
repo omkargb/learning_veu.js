@@ -1,0 +1,37 @@
+<html>
+ <head>
+ 
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>veu t2</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+	
+ </head>
+<body class="container" style="background-color:ghostwhite; font-family: hind;"><br>
+ <div class="panel panel-primary panel-body">
+ 
+ <div id="app"> <h3 align="left">Veu.js - Live data update - simple example</h3>
+	
+	<hr align="center">
+	Start typing here...
+ <textarea rows="5"   class="form-control" v-model="message">
+ </textarea>
+
+ <hr>
+Typed message will instantly appear here..<br>
+ <textarea rows="5"   class="form-control" readonly>{{ message }} </textarea>
+ </div>
+                </div>
+ </body>
+
+
+ <script src="vue.js"></script>
+
+
+ <script>
+ new Vue({
+ el: '#app',
+ data: { message: '' }
+})
+ </script>
+</html>

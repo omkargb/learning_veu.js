@@ -1,0 +1,66 @@
+<html>
+ <head>
+ 
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing indicator</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+	
+ </head>
+<body class="container" style="background-color:ghostwhite"><br>
+ <div class="panel panel-info panel-body">
+ 
+<h3>Veu.js - Typing indicator</h3>
+		<hr>
+    <div id="watch-example">
+      <p>
+        Type something :
+        <input v-model="question">
+      </p>
+      <p>{{ answer }}</p>
+    </div>
+  
+ </div>
+
+ </body>
+
+
+ <script src="vue.js"></script>
+<script src="axios.min.js"></script>
+<script src="lodash.min.js"></script>
+
+
+<script>
+  var watchExampleVM = new Vue({
+    el: '#watch-example',
+    data: {
+      question: '',
+      answer: 'You havnt typed anything !'
+    },
+    watch: {
+      // whenever question changes, this function will run
+      question: function (newQuestion, oldQuestion) {
+        this.answer = 'Typing...'
+        this.debouncedGetAnswer()
+      }
+    },
+    created: function () {
+      // _.debounce is a function provided by lodash to limit how
+      // often a particularly expensive operation can be run.
+      // In this case, we want to limit how often we access
+      // yesno.wtf/api, waiting until the user has completely
+      // finished typing before making the ajax request. To learn
+      // more about the _.debounce function (and its cousin
+      // _.throttle), visit: https://lodash.com/docs#debounce
+      this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
+    },
+    methods: {
+      getAnswer:  function () {
+      
+        this.answer = 'Stopped typing...'
+
+      }
+    }
+  })
+  </script>
+</html>

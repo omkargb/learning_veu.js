@@ -1,0 +1,41 @@
+<html>
+ <head>
+ 
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind exampler</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+	
+ </head>
+ 
+<body class="container" style="background-color:ghostwhite"><br>
+ <div class="panel panel-info panel-body">
+ 
+<h3> Veu.js - v-bind example </h3>
+		<hr>
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over this text.
+  </span>
+</div>
+  
+ </div>
+
+
+ </body>
+
+
+ <script src="vue.js"></script>
+<script src="axios.min.js"></script>
+<script src="lodash.min.js"></script>
+
+
+<script>
+var app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: 'Page load date & time : ' + new Date().toLocaleString()
+  }
+})
+  </script>
+</html>

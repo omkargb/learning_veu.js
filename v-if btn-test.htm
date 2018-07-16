@@ -1,0 +1,44 @@
+<html>
+ <head>
+ 
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Button test  using if</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+	
+ </head>
+<body class="container" style="background-color:#eeeeff"><br>
+ <div class="panel panel-info panel-body">
+ 
+<h3>Veu.js - button test using <b>if</b></h3>
+		<hr>
+<div id="app">
+<p v-if="!message">To send , You must type a message...</p>
+
+<textarea v-model="message" class="form-control"></textarea>
+<br>
+<a href=""><button v-show="message" class="btn btn-info btn-small"> Send  </button></a>
+ <hr> 
+ 
+ </div>
+
+ </div>
+
+ </body>
+
+
+ <script src="vue.js"></script>
+<script src="axios.min.js"></script>
+<script src="lodash.min.js"></script>
+
+
+ <script>
+new Vue({
+el: '#app',
+data: {
+message: ''
+ }
+})
+ </script>
+
+</html>
